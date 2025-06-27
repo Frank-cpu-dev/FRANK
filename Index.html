@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Planetas del Sistema Solar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('https://i.pinimg.com/564x/47/04/50/4704509679ce43fe31a3d7ee00710dc2.jpg') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 30px;
+      justify-content: flex-start;
+      max-width: 100%;
+      overflow-x: auto;
+      padding-bottom: 20px;
+      scrollbar-width: thin;
+      scrollbar-color: #6cf transparent;
+    }
+
+    .container::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .container::-webkit-scrollbar-thumb {
+      background: rgba(108, 255, 255, 0.4);
+      border-radius: 4px;
+    }
+
+    .card {
+      width: 250px;
+      height: 380px;
+      perspective: 1000px;
+      animation: floatUp 1s ease forwards;
+      flex-shrink: 0;
+    }
+
+    @keyframes floatUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 1s ease;
+      border-radius: 20px;
+    }
+
+    .card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      backface-visibility: hidden;
+      padding: 20px;
+      color: #fff;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #0d0d2b; /* Color sólido */
+      border: 1px solid #6cf;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    }
+
+    .card-back {
+      transform: rotateY(180deg);
+    }
+
+    .card-front img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 4px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 0 15px rgba(108, 255, 255, 0.7);
+      margin-bottom: 15px;
+      object-fit: cover;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #6cf;
+    }
+
+    .card-front p,
+    .card-back p {
+      font-size: 0.95rem;
+      margin: 4px 0;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- MERCURIO -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://img.freepik.com/vector-premium/ilustracion-vectorial-planeta-mercurio-planetas-isometricos-sistema-solar-alta-calidad_589019-1531.jpg" alt="Mercurio">
+          <h2>Mercurio</h2>
+          <p><strong>Diámetro:</strong> 4,879 km</p>
+          <p><strong>Órbita:</strong> 88 días</p>
+        </div>
+        <div class="card-back">
+          <h2>Dato</h2>
+          <p>No tiene atmósfera y sus temperaturas varían hasta 600°C entre el día y la noche.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- VENUS -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://space-facts.com/wp-content/uploads/venus.png" alt="Venus">
+          <h2>Venus</h2>
+          <p><strong>Diámetro:</strong> 12,104 km</p>
+          <p><strong>Órbita:</strong> 225 días</p>
+        </div>
+        <div class="card-back">
+          <h2>Dato</h2>
+          <p>Su densa atmósfera atrapa el calor, convirtiéndolo en el planeta más caliente.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TIERRA -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg" alt="Tierra">
+          <h2>Tierra</h2>
+          <p><strong>Diámetro:</strong> 12,742 km</p>
+          <p><strong>Órbita:</strong> 365 días</p>
+        </div>
+        <div class="card-back">
+          <h2>Dato</h2>
+          <p>Es el único planeta con vida conocida y agua líquida en abundancia.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MARTE -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://mars.nasa.gov/system/news_items/main_images/9337_PIA25681-FigureA-web.jpg" alt="Marte">
+          <h2>Marte</h2>
+          <p><strong>Diámetro:</strong> 6,779 km</p>
+          <p><strong>Órbita:</strong> 687 días</p>
+        </div>
+        <div class="card-back">
+          <h2>Dato</h2>
+          <p>Conocido como el planeta rojo por su superficie rica en óxido de hierro.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- JÚPITER -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter.jpg" alt="Júpiter">
+          <h2>Júpiter</h2>
+          <p><strong>Diámetro:</strong> 139,820 km</p>
+          <p><strong>Órbita:</strong> 11.9 años</p>
+        </div>
+        <div class="card-back">
+          <h2>Dato</h2>
+          <p>Es el planeta más grande del sistema solar y tiene más de 90 lunas.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SATURNO -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Saturn_during_Equinox.jpg" alt="Saturno">
+          <h2>Saturno</h2>
+          <p><strong>Diámetro:</strong> 116,460 km</p>
+          <p><strong>Órbita:</strong> 29.5 años</p>
+        </div>
+        <div class="card-back">
+          <h2>Dato</h2>
+          <p>Famoso por sus anillos visibles, compuestos de hielo, roca y polvo.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
